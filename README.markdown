@@ -5,6 +5,7 @@ A performant iPhone notification (APNs) system, that has an AMQP interface.
 The project is meant to be run as a standalone service, that maintains
 persistent connections to Apple servers.  Clients of the service, simply need
 to enqueue notifications requests in a rabbitMQ queue.
+![Image](http://d1xzuxjlafny7l.cloudfront.net/wp-content/uploads/2011/05/Push-Overview.jpg)
 
 How to add sbteclipse
 =========================
