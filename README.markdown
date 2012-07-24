@@ -7,11 +7,11 @@ persistent connections to Apple servers.  Clients of the service, simply need
 to enqueue notifications requests in a rabbitMQ queue.
 ![Image](http://d1xzuxjlafny7l.cloudfront.net/wp-content/uploads/2011/05/Push-Overview.jpg)
 
-How to add sbteclipse
+####How to add sbteclipse
 =========================
 sbt eclipse 
 
-How to Compile and Run
+####How to Compile and Run
 =========================
 
 The project is built using Scala (Scala 2.9.2), and uses sbt (sbt 0.11.3) for building:
@@ -24,7 +24,7 @@ Running:
 
     sbt run  [configuration-file]
 
-Configuration Files
+####Configuration Files
 =======================
 
 A configuration file is needed to set the apns notification and rabbit mq
@@ -47,7 +47,7 @@ config files, and a sample file would look like
         roll = "daily"
     }
 
-Expected Message Format
+####Expected Message Format
 =========================
 
 The AMPQ notifier expects JSON messages, that contain three properties:
@@ -64,7 +64,7 @@ Sample message:
         "payload": { "aps": {"alert": "Hello World!"} }
     }
 
-Logging
+####Logging
 =======================
 
 The logging configuration is customizable.  You have the option of using
@@ -80,7 +80,7 @@ be (de)commented out.  Changing the options, require running
 Logback is a more capable and expressive logging system, but Configgy logger
 is easier to setup and configure.
 
-Packaging
+####Packaging
 =======================
 
 To bundle the project, you can run the shell script `./package.sh`.  The

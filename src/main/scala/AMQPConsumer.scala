@@ -32,8 +32,11 @@ package com.notnoop.notifier
 
 import org.slf4j.LoggerFactory
 
-import com.rabbitmq.client.{ConnectionFactory,ConnectionParameters,Channel}
-import com.rabbitmq.client.{QueueingConsumer, ShutdownSignalException}
+import com.rabbitmq.client.Channel
+import com.rabbitmq.client.ConnectionFactory
+import com.rabbitmq.client.QueueingConsumer
+import com.rabbitmq.client.ShutdownSignalException
+//import com.rabbitmq.client.ConnectionParameters
 
 trait MQHandler {
   def handleRequest(msg: Array[Byte]): Boolean
@@ -48,15 +51,15 @@ object MQChannel {
     host: String, port: Int) = {
     val durable = true
 
-    val params = new ConnectionParameters()
-
-    val conFactory = new ConnectionFactory(params)
-
-    val conn = conFactory.newConnection(host, port)
+    val conFactory = new ConnectionFactory()
+    
+    conFactory.setHost(host)
+    conFactory.setPort(port)
+    val conn = conFactory.newConnection()
     val channel = conn.createChannel()
 
     channel.exchangeDeclare(exchangeName, "direct", durable)
-    channel.queueDeclare(queueName, durable)
+    channel.queueDeclare(queueName, durable, false, false, null)
     channel.queueBind(queueName, exchangeName, routingKey)
 
     channel

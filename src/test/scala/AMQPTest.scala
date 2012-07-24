@@ -42,9 +42,9 @@ trait MQSender {
   val routing: String
 
   val channel = {
-    val params = new ConnectionParameters
-    val conFactory = new ConnectionFactory(params)
-    val connection = conFactory.newConnection(hostname)
+    val conFactory = new ConnectionFactory()
+    conFactory.setHost(hostname)
+    val connection = conFactory.newConnection()
     val channel = connection.createChannel()
     channel
   }
