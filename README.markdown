@@ -6,10 +6,14 @@ The project is meant to be run as a standalone service, that maintains
 persistent connections to Apple servers.  Clients of the service, simply need
 to enqueue notifications requests in a rabbitMQ queue.
 
+How to add sbteclipse
+=========================
+sbt eclipse 
+
 How to Compile and Run
 =========================
 
-The project is built using Scala (Scala 2.7.7), and uses sbt for building:
+The project is built using Scala (Scala 2.9.2), and uses sbt (sbt 0.11.3) for building:
 
 Building:
 
