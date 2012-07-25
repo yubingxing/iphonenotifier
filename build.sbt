@@ -6,8 +6,7 @@ scalaVersion := "2.9.2"
 
 resolvers ++= Seq(
 	Classpaths.typesafeResolver,
-	"Scala Tools Snapshots" at "http://scala-tools.org/repo-snapshots/",
-	"Local Maven Repository" at "file://"+Path.userHome.absolutePath+"/.m2/repository"
+	"Scala Tools Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/"
 )
 
 libraryDependencies ++= Seq(
