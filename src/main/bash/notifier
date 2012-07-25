@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PID_FILE=/var/run/notifier.pid
+PID_FILE=/var/run/iphonenotifier.pid
 
 mydir="`dirname $0`"
 mylib="`dirname $mydir`"/lib

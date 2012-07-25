@@ -46,6 +46,7 @@ object Boot {
   }
 
   def main(args: Array[String]) {
+    
     val config = configure(args.firstOption)
 
     val keyStore = config.getString("apns.keystore.path").get
